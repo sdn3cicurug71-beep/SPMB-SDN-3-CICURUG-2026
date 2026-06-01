@@ -1,5 +1,5 @@
 /**
- * Google Apps Script Backend for PPDB SD
+ * Google Apps Script Backend for SPMB SD
  * Deploy as a Web App:
  * 1. Click "Deploy" -> "New deployment"
  * 2. Select type: "Web app"
@@ -11,7 +11,7 @@
 const SHEET_NAME = "Data Pendaftar";
 const ADMIN_SHEET_NAME = "Admin";
 const SETTINGS_SHEET_NAME = "Pengaturan";
-const FOLDER_NAME = "PPDB SD";
+const FOLDER_NAME = "SPMB SD";
 
 const DEFAULT_FORM_FIELDS = [
   { id: "Nama Lengkap", label: "Nama Lengkap", type: "text", required: true },
@@ -28,10 +28,10 @@ const DEFAULT_FORM_FIELDS = [
 ];
 
 const DEFAULT_SETTINGS = {
-  namaSekolah: "SDN Harapan Bangsa",
-  alamat: "Jl. Pendidikan No. 123, Kota Pelajar, Indonesia 12345",
-  telepon: "(021) 1234-5678",
-  email: "info@sdnharapanbangsa.sch.id",
+  namaSekolah: "SD NEGERI 3 CICURUG",
+  alamat: "Jl. Kaum Kidul No. 71, Kel. Cicurug, Kab. Sukabumi, Prov. Jawa Barat, Indonesia 43359",
+  telepon: "(021) 750-2012",
+  email: "sdn3cicurug.71@gmail.com",
   deskripsi: "Mencetak generasi penerus bangsa yang cerdas, berakhlak mulia, dan siap menghadapi tantangan masa depan dengan pendidikan berkualitas.",
   statusPendaftaran: "Buka",
   formFields: JSON.stringify(DEFAULT_FORM_FIELDS)
@@ -237,7 +237,7 @@ function handleRegistration(data) {
       }
     }
   }
-  const noPendaftaran = `PPDB-${year}-${String(nextId).padStart(3, '0')}`;
+  const noPendaftaran = `SPMB-${year}-${String(nextId).padStart(3, '0')}`;
   
   const folder = getOrCreateFolder(FOLDER_NAME);
   const rowData = new Array(headers.length).fill("");
