@@ -138,7 +138,7 @@ export default function CheckStatus() {
     doc.text('Diharapkan segera melakukan daftar ulang dengan membawa persyaratan berikut:', 20, currentY);
     
     currentY += lineSpacing;
-    const reqText = settings?.persyaratanDaftarUlang || '1. Bukti Kelulusan ini (dicetak)\n2. Fotokopi Akta Kelahiran (2 lembar)\n3. Fotokopi Kartu Keluarga (2 lembar)\n4. Pas Foto 3x4 (4 lembar)\n5. Melakukan pembayaran administrasi awal';
+    const reqText = settings?.persyaratanDaftarUlang || '1. Bukti Kelulusan ini (dicetak)\n2. Fotokopi Akta Kelahiran (2 lembar)\n3. Fotokopi Kartu Keluarga (2 lembar)\n4. Ijazah TK (Jika Ada)';
     const splitReq = doc.splitTextToSize(reqText, 160);
     doc.text(splitReq, 25, currentY);
     
@@ -221,7 +221,7 @@ export default function CheckStatus() {
                 <p className="text-sm text-green-700 mb-2 font-medium">Tanggal Daftar Ulang: {new Date(settings.tanggalDaftarUlang).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
               )}
               <div className="text-sm text-green-700 whitespace-pre-line">
-                {settings?.persyaratanDaftarUlang || '1. Membawa Bukti Kelulusan yang dicetak\n2. Membawa Fotokopi Akta Kelahiran (2 lembar)\n3. Membawa Fotokopi Kartu Keluarga (2 lembar)\n4. Membawa Pas Foto 3x4 (4 lembar)\n5. Melakukan pembayaran administrasi awal'}
+                {settings?.persyaratanDaftarUlang || '1. Membawa Bukti Kelulusan yang dicetak\n2. Membawa Fotokopi Akta Kelahiran (2 lembar)\n3. Membawa Fotokopi Kartu Keluarga (2 lembar)\n4. Ijazah TK (Jika Ada)'}
               </div>
             </div>
 
@@ -294,7 +294,7 @@ export default function CheckStatus() {
                   value={noPendaftaran}
                   onChange={(e) => setNoPendaftaran(e.target.value)}
                   className="flex-grow px-4 py-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                  placeholder="Contoh: SPMB-2024-001"
+                  placeholder="Contoh: SPMB-2026-001"
                 />
                 <button
                   type="submit"
